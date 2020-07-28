@@ -16,7 +16,8 @@ const Button = styled.button`
     transition: opacity .3s;
     .&:hover,
     .&:focus {
-        opacity: .5;
+        opacity: .4;
+        
     }
 `;
 
