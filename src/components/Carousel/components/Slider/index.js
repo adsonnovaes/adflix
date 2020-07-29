@@ -2,7 +2,7 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
-import { findAllByTestId } from '@testing-library/react';
+//import { findAllByTestId } from '@testing-library/react';
 
 const Container = styled.ul`
   padding: 0;
