@@ -2,6 +2,7 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
+import { findAllByTestId } from '@testing-library/react';
 
 const Container = styled.ul`
   padding: 0;
@@ -29,7 +30,9 @@ const Container = styled.ul`
 `;
 
 export const SliderItem = styled.li`
-  margin-right: 16px;
+  margin-right: 14px;
+  margin-left: 7px;
+  margin-top: 14px;
   img {
     margin: 16px;
     width: 298px;
@@ -43,7 +46,7 @@ const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
       dots: false,
-      infinite: false,
+      infinite: true,
       speed: 300,
       centerMode: false,
       variableWidth: true,
