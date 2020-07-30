@@ -1,12 +1,12 @@
 {
   "categorias": [
     {
-      "titulo": "Front End",
+      "titulo": "Ficção",
       "link": "https://www.alura.com.br/formacao-front-end",
-      "cor": "#6BD1FF",
+      "cor": "#141414",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Outras sugestões",
+        "url": ""
       },
       "videos": [
         {
@@ -45,10 +45,10 @@
     },
     {
       "titulo": "Back End",
-      "cor": "#00C86F",
+      "cor": "#141414",
       "link_extra": {
-        "text": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
+        "text": "Outras sugestões",
+        "url": ""
       },
       "videos": [
         {
@@ -75,10 +75,10 @@
     },
     {
       "titulo": "Data Science e Inteligência Artificial",
-      "cor": "#9cd33b",
+      "cor": "#141414",
       "link_extra": {
-        "text": "Cursos de Data Science na Alura",
-        "url": "https://www.alura.com.br/formacao-data-science"
+        "text": "Outras sugestões",
+        "url": ""
       },
       "videos": [
         {
@@ -101,7 +101,11 @@
     },
     {
       "titulo": "Filmes",
-      "cor": "orange",
+      "cor": "#141414",
+      "link_extra": {
+        "text": "Outras sugestões",
+        "url": ""
+      },
       "videos": [
         {
           "titulo": "Interestellar",
@@ -123,10 +127,10 @@
     },
     {
       "titulo": "Games",
-      "cor": "red",
+      "cor": "#141414",
       "link_extra": {
-        "text": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/formacao-jogos-unity"
+        "text": "Outras sugestões",
+        "url": ""
       },
       "videos": [
         {
@@ -153,10 +157,10 @@
     },
     {
       "titulo": "Aprendendo a aprender tecnologia",
-      "cor": "#6b5be2",
+      "cor": "#141414",
       "link_extra": {
-        "text": "Curso sobre aprendizado na Alura",
-        "url": "https://alura.com.br/curso-online-aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento"
+        "text": "Outras sugestões",
+        "url": ""
       },
       "videos": [
         {

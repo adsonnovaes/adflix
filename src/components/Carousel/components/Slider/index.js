@@ -16,8 +16,12 @@ const Container = styled.ul`
     width: 30px;
     height: 30px;
     transform: initial;
+    margin-left: 7px;
+    
     &:before {
       font-size: 30px;
+      color: #c90000;
+      
     }
   }
   
@@ -25,7 +29,7 @@ const Container = styled.ul`
     left: 0;
   }
   .slick-next {
-    right: 16px;
+    right: 7px;
   }
 `;
 
