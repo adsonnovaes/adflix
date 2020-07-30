@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function FormField({ label, type, name, value, onChange}) {
+function FormFieldArea({ label, type, name, value, onChange}) {
     return(
         <div>
 
@@ -18,4 +19,18 @@ function FormField({ label, type, name, value, onChange}) {
     )
 }
 
-export default FormField;
+FormFieldArea.defaultProps = {
+    type: 'text',
+    value: '',
+    onChange: () => {}
+  };
+  
+FormFieldArea.prototype = {
+    label: PropTypes.string.isRequired, 
+    type: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+};
+
+export default FormFieldArea;

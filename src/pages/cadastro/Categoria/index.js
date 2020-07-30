@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
-import FormFieldArea from '../../../components/FormFieldArea';
+import Button from '../../../components/Button';
 
 // quando queremos uma duplicidade de dados e não ter problema com a key, concatena o indice com a informação, uma forma de "burlar";
 
@@ -32,6 +32,17 @@ function CadastroCategoria () {
             infoEvento.target.getAttribute('name'), infoEvento.target.value)
     }
 
+    useEffect(()=>{
+        const URL = 'http://localhost:8080/categoria';
+        fetch(URL).then( async (answerServer) => {
+            const answer = await answerServer.json();
+            setCategorias([
+                ...answer,
+            ]);
+        });       
+
+    },[]);
+ 
     return (
         <PageDefault>
             <h1>Cadastro de Categoria: {values.nome}</h1>
@@ -55,9 +66,9 @@ function CadastroCategoria () {
                     onChange={handleChange}
                 />
 
-                <FormFieldArea
+                <FormField
                     label="Descrição:"
-                    type="text"
+                    type="textarea"
                     name="descricao"
                     value= {values.descricao}
                     onChange={handleChange}
@@ -71,10 +82,16 @@ function CadastroCategoria () {
                     onChange={handleChange}
                 />
 
-                <button>
+                <Button>
                     Cadastrar
-                </button>
+                </Button>
             </form>
+
+            {categorias.length === 0 &&(
+                <div>
+                    Loading...
+                </div>
+            )}
 
             <ul>
                 {categorias.map((categoria, indice)=>{
