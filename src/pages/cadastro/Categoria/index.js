@@ -3,34 +3,17 @@ import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 // quando queremos uma duplicidade de dados e não ter problema com a key, concatena o indice com a informação, uma forma de "burlar";
-
 function CadastroCategoria () {
     const valoresIniciais = {
-        nome: '',
+        titulo: '',
         descricao:'',
         cor:'',
     }
-
-    const [categorias, setCategorias] = useState([])
-    const [values, setValues] = useState(valoresIniciais);
-
-
-
-    function setValue(chave, valor) {
-        setValues({
-            ...values,
-            [chave]: valor,
-
-        })
-
-    }
-
-    function handleChange(infoEvento){    
-        setValue(
-            infoEvento.target.getAttribute('name'), infoEvento.target.value)
-    }
+    const {values, handleChange, clearForm} = useForm(valoresIniciais);
+    const [categorias, setCategorias] = useState([]);
 
     useEffect(()=>{
         const URL = window.location.hostname.includes('localhost') ? 'http://localhost:8080/categoria' : 'http://adflix.herokuapp.com/categoria';
@@ -45,7 +28,7 @@ function CadastroCategoria () {
  
     return (
         <PageDefault>
-            <h1>Cadastro de Categoria: {values.nome}</h1>
+            <h1>Cadastro de Categoria: {values.titulo}</h1>
 
             <form onSubmit={function handleSubmit (infoEvento) {
                 infoEvento.preventDefault()
@@ -54,15 +37,15 @@ function CadastroCategoria () {
                     values
                 ]);
 
-                setValues(valoresIniciais)
+                clearForm();
 
             }}>
 
                 <FormField
-                    label="Nome da Categoria:"
+                    label="Título da Categoria:"
                     type="text"
-                    name="nome"
-                    value={values.nome}
+                    name="titulo"
+                    value={values.titulo}
                     onChange={handleChange}
                 />
 
@@ -97,7 +80,7 @@ function CadastroCategoria () {
                 {categorias.map((categoria, indice)=>{
                     return (
                         <li key={`${categoria}${indice} `}> 
-                            {categoria.nome}
+                            {categoria.titulo}
                         </li>
                     )
                 })}
