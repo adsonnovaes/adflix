@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
+import config from '../config';
 
 // quando queremos uma duplicidade de dados e não ter problema com a key, 
 //concatena o indice com a informação, uma forma de "burlar";
