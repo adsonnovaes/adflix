@@ -5,7 +5,8 @@ import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 
-// quando queremos uma duplicidade de dados e não ter problema com a key, concatena o indice com a informação, uma forma de "burlar";
+// quando queremos uma duplicidade de dados e não ter problema com a key, 
+//concatena o indice com a informação, uma forma de "burlar";
 function CadastroCategoria () {
     const valoresIniciais = {
         titulo: '',
@@ -16,7 +17,7 @@ function CadastroCategoria () {
     const [categorias, setCategorias] = useState([]);
 
     useEffect(()=>{
-        const URL = window.location.hostname.includes('localhost') ? 'http://localhost:8080/categoria' : 'http://adflix.herokuapp.com/categoria';
+        const URL = `${config.URL_BACK}/categoria`;
         fetch(URL).then( async (answerServer) => {
             const answer = await answerServer.json();
             setCategorias([

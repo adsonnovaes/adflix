@@ -3,6 +3,5 @@ const URL_BACK = window.location.hostname.includes('localhost')
 : 'https://adflix.herokuapp.com';
 
 export default {
-    URL_BACK
-    ,
+    URL_BACK,
 }
