@@ -5,7 +5,7 @@ import Button from '../Button';
 import {Link} from 'react-router-dom';
 //import ButtonLink from './components/ButtonLink';
 
-function Menu () {
+function Menu ({text, route}) {
     return (
         <nav className="Menu">
 
@@ -13,8 +13,8 @@ function Menu () {
                 <img className="Logo" src={Logo} alt="AdFlix logo"/>
             </Link>
 
-            <Button as={Link} className="ButtonLink" to="/cadastro/video">
-                Novo Vídeo
+            <Button as={Link} className="ButtonLink" to={route}>
+                {text}
             </Button>
 
         </nav>

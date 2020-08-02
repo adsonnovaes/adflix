@@ -7,7 +7,7 @@ const Main = styled.main`
     background-color: #141414;
     color: #ffffff;
     flex: 1;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-left: 5%;
     padding-right: 5%;
     ${({paddingAll}) => css`
@@ -16,11 +16,11 @@ const Main = styled.main`
 
 `;
 
-function PageDefault({ children, paddingAll }){
+function PageDefault({ children, paddingAll, buttonPage, link }){
     return (
         <>
 
-            <Menu/>
+            <Menu text={buttonPage} route={link}/>
                 <Main paddingAll={paddingAll}>
                     {children}
                 </Main>

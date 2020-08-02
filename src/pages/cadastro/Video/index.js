@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import useForm from '../../../hooks/useForm';
 import FormField from '../../../components/FormField';
-import Button from '../../../components/Button';
+import Button from '../../../components/ButtonCadastro';
 import videosRepository from '../../../repositories/video';
 import CategoriasRepository from '../../../repositories/categoria'; 
 
@@ -26,7 +26,7 @@ function CadastrarVideo () {
     },[])
 
     return ( 
-        <PageDefault>
+        <PageDefault buttonPage="Nova Categoria" link="/cadastro/categoria">
             <h1>Cadastro de vídeo:</h1>
 
             <form onSubmit={(event)=>{
@@ -35,7 +35,6 @@ function CadastrarVideo () {
                 const categoriaEscolhida = categorias.find((categoria)=>{
                     return categoria.titulo === values.categoria;
                 })
-
 
                 videosRepository.Create({
                     titulo: values.titulo,
@@ -69,15 +68,11 @@ function CadastrarVideo () {
                     onChange={handleChange}
                     suggestions={categoryTitles}
                 />
-                <Button type="submit">
+                <Button type="submit" >
                     Cadastrar
                 </Button>
+
             </form>
-
-            <Link to="/cadastro/categoria">
-                Cadastrar Categoria
-
-            </Link>
         </PageDefault>
     )
 }

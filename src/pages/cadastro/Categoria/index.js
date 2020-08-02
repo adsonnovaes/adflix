@@ -29,7 +29,7 @@ function CadastroCategoria () {
     },[]);
  
     return (
-        <PageDefault>
+        <PageDefault buttonPage="Menu Inicial" link="/">
             <h1>Cadastro de Categoria: {values.titulo}</h1>
 
             <form onSubmit={function handleSubmit (infoEvento) {
@@ -87,11 +87,6 @@ function CadastroCategoria () {
                     )
                 })}
             </ul>
-
-
-            <Link to="/">
-                Ir para Home
-            </Link>
         </PageDefault>
     )
 }

@@ -17,11 +17,10 @@ function Home() {
     })
 
   }, []);
-
   // http://localhost:8080/categoria?_embed=video 
 
   return (
-    <PageDefault paddingAll={0}>
+    <PageDefault paddingAll={0} buttonPage="Novo Vídeo" link="/cadastro/video">
       {dadosIniciais.length === 0 && (<div>Loading...</div>)}
       {dadosIniciais.map((categoria, indice) => {
         if (indice === 0) {
